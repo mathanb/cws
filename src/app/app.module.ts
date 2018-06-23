@@ -9,11 +9,20 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { FooterComponent } from './footer/footer.component';
 import { OurworkComponent } from './ourwork/ourwork.component';
 import { DonateComponent } from './donate/donate.component';
+import { GiveonceComponent } from './donate/giveonce/giveonce.component';
+import { GivemonthlyComponent } from './donate/givemonthly/givemonthly.component';
+import { SponsoracommunityComponent } from './donate/sponsoracommunity/sponsoracommunity.component';
+import { FundraiseComponent } from './fundraise/fundraise.component';
+import { LearntofundraiseComponent } from './fundraise/learntofundraise/learntofundraise.component';
+import { StartacampaignComponent } from './fundraise/startacampaign/startacampaign.component';
+import { FindacampaignComponent } from './fundraise/findacampaign/findacampaign.component';
 
 const appRoutes: Routes = [
   { path: 'app-aboutus', component: AboutusComponent },
   { path: 'app-ourwork', component: OurworkComponent },
   { path: 'app-homepage', component: HomepageComponent },
+  { path: 'app-giveonce', component: GiveonceComponent },
+  { path: 'app-givemonthly', component: GivemonthlyComponent },
   { path: '', component: HomepageComponent }
 ];
 
@@ -25,7 +34,14 @@ const appRoutes: Routes = [
     AboutusComponent,
     FooterComponent,
     OurworkComponent,
-    DonateComponent
+    DonateComponent,
+    GiveonceComponent,
+    GivemonthlyComponent,
+    SponsoracommunityComponent,
+    FundraiseComponent,
+    LearntofundraiseComponent,
+    StartacampaignComponent,
+    FindacampaignComponent
   ],
   imports: [
     BrowserModule,
