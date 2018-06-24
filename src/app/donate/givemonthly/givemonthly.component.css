@@ -225,8 +225,8 @@ input[type='submit'].btn {
 	display: none;
 }
 .s-donation-form.intro .donate-option {
-	background-color: #c0c0c0;
-	border: 1px solid #c0c0c0;
+	background-color: #ffffff;
+	border: 1px solid 	#c0c0c0;
 	padding-left: 0px;
 	padding-right: 0px;
 	text-transform: none;
@@ -240,8 +240,8 @@ input[type='submit'].btn {
 }
 .s-donation-form.intro .donate-option.selected {
 	color: #fff;
-	border-color: #009ca6;
-	background-color: #009ca6;
+	border-color:  #1e90ff;
+	background-color: #1e90ff;
 }
 .s-donation-form.intro .donate-amounts .donate-option {
 	-webkit-box-orient: vertical;
@@ -380,8 +380,6 @@ p {
 	max-width: 1248px;
 	width: 100%;
 	padding: 0 16px;
-	background-image: url('../../../assets/homepage-main-slide1.jpg');
-	
 }
 .page-content {
 	background-color: #f0f0f0;
@@ -566,4 +564,18 @@ a {
 ul li > *, ol li > * {
 	margin: 0;
 }
+
+.btn-bg {
+	background-color:#ffffff;
+}
+
+.donate-giveonce-bg {
+	background-image: url('../../../assets/donation-bg.jpg');
+}
+
+.donate-monthly-bg {
+	background-image: url('../../../assets/donation-monthly-bg1.jpg');
+}
+
+
 
