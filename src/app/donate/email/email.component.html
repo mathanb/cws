@@ -1,0 +1,38 @@
+
+<!-- Page Content -->
+<div class="container">
+
+	<div class="example-container">
+		<br>
+		<form [formGroup] = "emailForm" (ngSubmit) = "onClickSubmit(emailForm.value)">
+			<mat-form-field> 
+				<mat-select placeholder="Select Email Template"  formControlName = "emailMessageTemplate" (change)="changeMessageTemplate($event)"> 
+					<mat-option *ngFor="let choice of emailTemplates" [value]="choice">{{choice}}</mat-option>
+				</mat-select>
+			</mat-form-field> 
+				<br>
+			
+			<mat-form-field> 	
+				<textarea matInput placeholder="To" formControlName = "toEmail"></textarea> 
+			</mat-form-field>
+				<br>
+			
+			<mat-form-field> 
+				<textarea matInput placeholder="Cc" formControlName = "ccEmail"></textarea> 
+			</mat-form-field>
+				<br>
+	
+			<mat-form-field> 
+				<input matInput placeholder="Subject" formControlName = "emailSubject"> 
+			</mat-form-field> 	
+				<br>
+	
+			<mat-form-field> 
+				<textarea matInput placeholder="Message" formControlName = "emailMessage">	{{emailBodyMsg</textarea> 
+			</mat-form-field>
+			<br>
+			<input type = "submit" value = "send">
+ 		
+ 		</form>
+	</div>
+</div>
