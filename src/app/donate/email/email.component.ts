@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule, FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
-import 'rxjs/add/operator/map';
+import { EmailService } from '../../services/emailservice.service';
 
 const  birthdayMsgTemplate = "birthday message fidjfoseifoiej foewjfiicoi";
 const  marriageMsgTemplate = "dfhuriwhfiruhh ewowjfoiefj";
@@ -18,7 +18,7 @@ const  otherMsgTemplate = "skrjfrjfomro ofjopskfork";
     HttpClientModule
   ],
   declarations: [],
-  providers: []
+  providers: [EmailService]
 })
 @Component({
   selector: 'app-email',
@@ -28,12 +28,12 @@ const  otherMsgTemplate = "skrjfrjfomro ofjopskfork";
 export class EmailComponent implements OnInit {
 
   emailForm: FormGroup;
-  urlVal;
+  responseVal;
   emailTemplates = ["Birthday", "Marriage", "In Memory Of", "Others"]; 
   emailBodyMsg;
  
   
-  constructor(private http: HttpClient) {
+  constructor(public emailService: EmailService) {
     this.emailForm = new FormGroup({
       emailMessageTemplate: new FormControl(),
       toEmail: new FormControl(),
@@ -62,13 +62,27 @@ export class EmailComponent implements OnInit {
     
   }
   
-   onClickSubmit(value) {
-    
-     this.urlVal = "http://localhost:8080/CWSServices/cwsemailservice/sendmail/"+value.toEmail+"/"+value.ccEmail+"/"+value.emailSubject+"/"+value.emailMessage;
-     alert(this.urlVal);
-     //call rest service;
-     this.http.get("http://localhost:8080/CWSServices/cwsemailservice/sendmail/"+value.toEmail+"/"+value.ccEmail+"/"+value.emailSubject+"/"+value.emailMessage);
+  onClickSubmit(value) {
+
+    var params = value.toEmail + "/" + value.ccEmail + "/" + value.emailSubject + "/" + value.emailMessage;
+
+    // this.urlVal = "http://localhost:8080/CWSServices/cwsemailservice/sendmail/"+value.toEmail+"/"+value.ccEmail+"/"+value.emailSubject+"/"+value.emailMessage;
+    try {
+      this.emailService.sendEmail(params)
+        .subscribe(resp => {
+          console.log(resp, "res");
+          this.responseVal = resp
+        },
+        error => {
+          console.log(error, "error");
+        })
+      
+    } catch (e) {
+      console.log(e);
     }
+
+    
+  }
 
 }
 

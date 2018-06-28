@@ -21,6 +21,8 @@ import { LearntofundraiseComponent } from './fundraise/learntofundraise/learntof
 import { StartacampaignComponent } from './fundraise/startacampaign/startacampaign.component';
 import { FindacampaignComponent } from './fundraise/findacampaign/findacampaign.component';
 import { EmailComponent } from './donate/email/email.component';
+import { EmailService } from './services/emailservice.service';
+
 
 const appRoutes: Routes = [
   { path: 'app-aboutus', component: AboutusComponent },
@@ -60,13 +62,13 @@ const appRoutes: Routes = [
     MatOptionModule,
     MatInputModule,
     MatButtonModule,
-    HttpClientModule,
+    HttpClientModule,     
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true }
     )
   ],
-  providers: [],
+  providers: [EmailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
