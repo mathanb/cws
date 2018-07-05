@@ -1,4 +1,7 @@
+import { NgModule } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
+import { Videoservice } from '../services/videoservice';
 
 @Component({
   selector: 'app-homepage',
@@ -7,7 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepageComponent implements OnInit {
 
-  constructor() { }
+  iframe_html: any;
+  videoUrl: SafeResourceUrl;
+  
+  constructor(public embedVideo: Videoservice, private sanitizer: DomSanitizer) { 
+    this.videoUrl = sanitizer.bypassSecurityTrustResourceUrl(embedVideo.getVideoURL());
+  }
 
   ngOnInit() {
   }

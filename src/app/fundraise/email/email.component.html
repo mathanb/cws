@@ -1,0 +1,80 @@
+<!-- Page Content -->
+<div class="container">
+      <!-- Page Heading/Breadcrumbs -->
+      <h1 class="mt-4 mb-3">Pledge Your Special Day</h1>
+     <ol class="breadcrumb">
+       <li class="breadcrumb-item">
+         <a href="index.html">Home</a>
+       </li>
+       <li class="breadcrumb-item active">Pledge Your Special Day</li>
+     </ol>	
+     
+	<!-- Email Content -->
+	<div class="page-content">
+	
+		<div class="email-container">
+			<br>
+			<form [formGroup] = "emailForm" (ngSubmit) = "onClickSubmit(emailForm.value)">
+				
+				<mat-form-field class="matformfield-width" > 
+					<input matInput type="string" placeholder="" formControlName = "fullName"> 
+				</mat-form-field> 	
+				<mat-form-field class="matformfield-width"> 
+					<input matInput type="string" placeholder="Full Name" formControlName = "fullName"> 
+				</mat-form-field> 	
+				<br>
+			
+				<mat-form-field class="matformfield-width"> 
+					<input matInput type="date" placeholder="Occassion Date" formControlName = "occassionDate"> 
+				</mat-form-field> 	
+					<br>
+					
+				<mat-form-field class="matformfield-width"> 
+					<input matInput type="email" placeholder="Email" formControlName = "fromEmail"> 
+				</mat-form-field> 	
+					<br>
+			
+				<mat-form-field class="matformfield-width"> 
+					<mat-select placeholder="Select Email Template" type="template" formControlName = "emailMessageTemplate" (change)="changeMessageTemplate($event)"> 
+						<mat-option *ngFor="let choice of emailTemplates" [value]="choice">{{choice}}</mat-option>
+					</mat-select>
+				</mat-form-field> 
+					<br>
+				
+				<mat-form-field class="matformfield-width"> 	
+					<textarea matInput type="email" placeholder="To" formControlName = "toEmail"></textarea> 
+				</mat-form-field>
+					<br>
+				
+				
+		
+				<mat-form-field class="matformfield-width"> 
+					<input matInput  placeholder="Subject" formControlName = "emailSubject"> 
+				</mat-form-field> 	
+					<br>
+		
+				<mat-form-field class="matformfield-width"> 
+					<textarea matInput placeholder="Message" formControlName = "emailMessage">	{{emailBodyMsg}}</textarea> 
+				</mat-form-field>
+				<br>
+				<mat-card>
+  					<button  type = "submit" mat-raised-button> Send </button>
+  					<mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+				</mat-card>
+				<br>
+	 			<mat-card *ngIf="displayResult">
+ 					 <h1>{{ result }}</h1>
+				</mat-card>
+				<br>
+	 		</form>
+		</div>
+	</div>
+</div>
+
+
+
+	
+	
+	
+	
+	

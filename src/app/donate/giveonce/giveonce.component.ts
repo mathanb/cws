@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-giveonce',
   templateUrl: './giveonce.component.html',
-  styleUrls: ['./giveonce.component.css']
+  styleUrls: ['../donate.component.css']
 })
 export class GiveonceComponent implements OnInit {
 
