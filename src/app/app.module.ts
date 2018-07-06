@@ -7,7 +7,7 @@ import { MatFormFieldModule, MatSelectModule, MatOptionModule, MatInputModule, M
 import { MatProgressSpinnerModule, MatCardModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { EmbedVideo } from 'ngx-embed-video';
+//import { EmbedVideo } from 'ngx-embed-video';
 
 import { AppComponent } from './app.component';
 import { AppheaderComponent } from './appheader/appheader.component';
@@ -76,8 +76,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true }
-    ),
-    EmbedVideo.forRoot()
+    )
+    //EmbedVideo.forRoot()
   ],
   exports: [
     BrowserModule,

@@ -10,7 +10,6 @@ import { Videoservice } from '../services/videoservice';
 })
 export class HomepageComponent implements OnInit {
 
-  iframe_html: any;
   videoUrl: SafeResourceUrl;
   
   constructor(public embedVideo: Videoservice, private sanitizer: DomSanitizer) { 
