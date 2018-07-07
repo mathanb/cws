@@ -199,11 +199,11 @@ input[type='submit'].btn {
 	display: none;
 }
 .s-donation-form.intro .donate-option {
-	background-color: #ffffff;
+	/* background-color: #ffffff; */
 	border: 1px solid 	#c0c0c0;
 	padding-left: 0px;
 	padding-right: 0px;
-	text-transform: none;
+	/* text-transform: inherit; */
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -212,7 +212,7 @@ input[type='submit'].btn {
 	-ms-flex-pack: center;
 	justify-content: center;
 }
-.s-donation-form.intro .donate-option.selected {
+.s-donation-form.intro {
 	color: #fff;
 	border-color:  #1e90ff;
 	background-color: #1e90ff;
@@ -226,8 +226,6 @@ input[type='submit'].btn {
 	flex-basis: calc(-16px + 25%);
 	max-width: calc(-16px + 25%);
 	margin-right: 15.99px;
-	font-size: 1.5rem;
-	line-height: 1.3333;
 	margin-bottom: 16px;
 }
 /* @media all and (min-width:768px) */
@@ -303,7 +301,6 @@ img {
 	flex-basis: calc(-16px + 50%);
 	max-width: calc(-16px + 50%);
 	margin-right: 15.99px;
-	font-size: 1.25rem;
 	line-height: 1.2;
 }
 
@@ -398,8 +395,9 @@ p {
 	margin: 32px 0;
 }
 
-.btn-bg {
+.amt-btn-bg {
 	background-color:#ffffff;
+	color:black;
 }
 
 .donate-giveonce-bg {
@@ -416,4 +414,28 @@ p {
 
 .donate-message-selected {
 	color:#ffffff
+}
+
+.donate-option-selected {
+	color: #fff;
+	border-color:  #1e90ff;
+	background-color: #1e90ff;
+}
+
+.donate-option-unselected {
+	color: black;
+	border-color:  #1e90ff;
+	background-color: white;
+}
+
+.amount-selected {
+	color: #fff;
+	border-color:  #1e90ff;
+	background-color: #1e90ff;
+}
+
+.amount-unselected {
+	color: black;
+	border-color:  #1e90ff;
+	background-color: white;
 }

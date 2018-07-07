@@ -30,45 +30,47 @@
 								<p class="donate-message-selected">$75 could buy aid kits for
 									two health workers.</p>
 							</div>
+							
 							<div class="donate-frequency">
-								<div tabindex="0" class="donate-option btn selected" data-freq="Single">Donate Monthly</div>
+								<div tabindex="0" class="btn-large donate-option btn donate-option-selected" data-freq="Single">Donate Monthly</div>
 							</div>
+							
 							<div class="donate-amounts">
-								<div tabindex="0" class="donate-option btn selected" >
-									$50
-								</div>
-	
-								<div tabindex="1" class="donate-option btn  ">
-									$75
-								</div>
-	
-								<div tabindex="2" class="donate-option btn btn-bg">
-									$120
-								</div>
-	
-								<div tabindex="3" class="donate-option btn btn-bg">
-									$150
-								</div>
-	
-								<div class="donate-amount-input" >
-									<input type="number" step="1" placeholder="$ Other">
+								<div tabindex="0" id="{{amount50}}" class="donate-option btn"
+									[ngClass]="{'amount-selected': isAmount50Selected, 'amount-unselected': isAmount50UnSelected }" 
+									(click)="setAmtBtnBgColor($event)">{{amount50}}</div>
+								<div tabindex="1" id="{{amount75}}"
+									class="donate-option btn"
+									[ngClass]="{'amount-selected': isAmount75Selected, 'amount-unselected': isAmount75UnSelected }" 
+									(click)="setAmtBtnBgColor($event)">{{amount75}}</div>
+								<div tabindex="2" id="{{amount120}}"
+									class="donate-option btn"
+									[ngClass]="{'amount-selected': isAmount120Selected, 'amount-unselected': isAmount120UnSelected }" 
+									(click)="setAmtBtnBgColor($event)">{{amount120}}</div>
+								<div tabindex="3" id="{{amount150}}"
+									class="donate-option btn"
+									[ngClass]="{'amount-selected': isAmount150Selected, 'amount-unselected': isAmount150UnSelected }" 
+									(click)="setAmtBtnBgColor($event)">{{amount150}}</div>
+								<div class="donate-amount-input" [ngClass]="{'amount-selected': isOtherAmountSelected, 'amount-unselected': isOtherAmountUnSelected }" 
+									(click)="setAmtBtnBgColor($event)">
+									<input #otherAmount id="{{otherAmount}}" class="btn-bg" placeholder="$ Other">
 								</div>
 							</div>
+							
 						</div>
 					</div>
 	
 					<div class="submit-button-wrapper ">
-						<div class="EditingFormButtonLeftCell"></div>
 						<div class="EditingFormButtonCell">
 							<input
-								name="p$lt$ctl00$plcPageContentZone$lt$ctl00$zoneContent$STC_Control_DonationForm$ctl01$hlNext"
-								class="FormButton btn btn-large btn-primary btn-full-width js-donate-btn js-form-validate"
-								id="p_lt_ctl00_plcPageContentZone_lt_ctl00_zoneContent_STC_Control_DonationForm_ctl01_hlNext"
-								type="submit" value="Donate Now">
-							
+								name="giveOnceBtn"
+								class="btn btn-large btn-primary btn-full-width"
+								id="giveOnceBtn"
+								type="submit" value="Donate Now" (click)="saveAmount(otherAmount.value)">
 						</div>
 						<br>
 					</div>
+					
 				</div>
 			</div>
 		</section>
