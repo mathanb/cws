@@ -403,11 +403,15 @@ p {
 }
 
 .donate-giveonce-bg {
-	background-image: url('../../assets/donation-bg.jpg');
+	background-image: url('../../assets/giveoncemainpicture.jpg');
 }
 
 .donate-monthly-bg {
-	background-image: url('../../assets/donation-monthly-bg1.jpg');
+	background-image: url('../../assets/givemonthlymainpicture.jpg');
+}
+
+.sponsor-a-community-bg {
+	background-image: url('../../assets/sponsoracommunity.jpg');
 }
 
 .donate-message-selected {

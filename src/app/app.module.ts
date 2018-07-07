@@ -7,7 +7,7 @@ import { MatFormFieldModule, MatSelectModule, MatOptionModule, MatInputModule, M
 import { MatProgressSpinnerModule, MatCardModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-//import { EmbedVideo } from 'ngx-embed-video';
+
 
 import { AppComponent } from './app.component';
 import { AppheaderComponent } from './appheader/appheader.component';
@@ -21,11 +21,9 @@ import { GivemonthlyComponent } from './donate/givemonthly/givemonthly.component
 import { SponsoracommunityComponent } from './donate/sponsoracommunity/sponsoracommunity.component';
 import { FundraiseComponent } from './fundraise/fundraise.component';
 import { LearntofundraiseComponent } from './fundraise/learntofundraise/learntofundraise.component';
-import { StartacampaignComponent } from './fundraise/startacampaign/startacampaign.component';
-import { FindacampaignComponent } from './fundraise/findacampaign/findacampaign.component';
 import { EmailComponent } from './fundraise/email/email.component';
 import { EmailService } from './services/emailservice.service';
-import { Videoservice } from './services/videoservice';
+
 
 
 const appRoutes: Routes = [
@@ -37,7 +35,6 @@ const appRoutes: Routes = [
   { path: 'app-sac', component: SponsoracommunityComponent },  
   { path: 'app-email', component: EmailComponent },
   { path: 'app-learntofundraise', component: LearntofundraiseComponent },
-  { path: 'app-startacampaign', component: StartacampaignComponent },
   { path: '', component: HomepageComponent }
 ];
 
@@ -55,8 +52,6 @@ const appRoutes: Routes = [
     SponsoracommunityComponent,
     FundraiseComponent,
     LearntofundraiseComponent,
-    StartacampaignComponent,
-    FindacampaignComponent,
     EmailComponent
   ],
   imports: [
@@ -77,7 +72,7 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true }
     )
-    //EmbedVideo.forRoot()
+
   ],
   exports: [
     BrowserModule,
@@ -94,7 +89,7 @@ const appRoutes: Routes = [
     MatCardModule,
     HttpClientModule
   ],
-  providers: [EmailService, Videoservice],
+  providers: [EmailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
