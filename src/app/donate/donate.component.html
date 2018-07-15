@@ -1,3 +1,99 @@
-<p>
-  donate works!
-</p>
+ <mat-vertical-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="cardFormGroup">
+ 
+		<mat-form-field class="matformfield-width" > 
+		<mat-label style="color:white">Amount To Pay</mat-label>
+			<input matInput type="number" placeholder="Amount to pay" [(ngModel)]="cardForm.amountToPay">
+		</mat-form-field> 	
+		<br>
+		
+		<mat-form-field class="matformfield-width"> 
+		<mat-label style="color:white">Description</mat-label>
+			<input matInput type="string" placeholder="Description" [(ngModel)]="cardForm.description" > 
+		</mat-form-field> 	
+		<br>
+		
+		<mat-form-field class="matformfield-width"> 
+		<mat-label style="color:white">Name On Card</mat-label>
+			<input matInput type="string" placeholder="Name On Card" [(ngModel)]="cardForm.nameOnCard">
+		</mat-form-field> 
+		<br>
+	
+		<mat-form-field class="matformfield-width"> 
+		<mat-label style="color:white">Card Number</mat-label>
+			<input matInput type="text" ng-model="cardForm.cardNumber" cc-number cc-type="cardType" ng-required="true" />
+		</mat-form-field> 	
+			
+		<mat-form-field class="matformfield-width"> 
+		<mat-label style="color:white">Expiry</mat-label>
+		<div cc-exp>
+  <input matInput ng-model="cardForm.exp_month" cc-exp-month ng-required="true" />
+  <input matInput ng-model="cardForm.exp_year" cc-exp-year ng-required="true" />
+</div>
+		</mat-form-field> 	
+	
+		<mat-form-field class="matformfield-width"> 
+		<mat-label style="color:white">CVC</mat-label>
+			<input matInput type="number" placeholder="CVC" [(ngModel)]="cardForm.cvc"> 
+		</mat-form-field> 	
+		<br>
+		
+		<mat-form-field class="matformfield-width"> 
+		<mat-label style="color:white">Email</mat-label>
+			<input matInput type="email" placeholder="Email" [(ngModel)]="cardForm.email"> 
+		</mat-form-field> 	
+		
+
+		<div>
+      		<button mat-button matStepperNext>Next</button>
+    	</div>
+ 	
+  </mat-step>
+
+  <mat-step [stepControl]="cardFormGroup">
+  
+      <ng-template matStepLabel>Payment Details</ng-template>
+     <mat-form-field class="matformfield-width" > 
+		<mat-label style="color:white">Address Line 1</mat-label>
+			<input matInput type="string" placeholder="Address Line 1" [(ngModel)]="addressForm.addressLine1" > 
+		</mat-form-field> 	
+		<br>
+		
+		<mat-form-field class="matformfield-width" > 
+		<mat-label style="color:white">Address Line 2</mat-label>
+			<input matInput type="string" placeholder="Address Line 2" [(ngModel)]="addressForm.addressLine2"> 
+		</mat-form-field> 	
+		<br>
+		
+		<mat-form-field class="matformfield-width" > 
+		<mat-label style="color:white">City</mat-label>
+			<input matInput type="string" placeholder="City" [(ngModel)]="addressForm.city">
+		</mat-form-field> 	
+		
+		<mat-form-field class="matformfield-width" > 
+		<mat-label style="color:white">State</mat-label>
+			<input matInput type="string" placeholder="State" [(ngModel)]="addressForm.state">
+		</mat-form-field> 	
+		
+		<mat-form-field class="matformfield-width" > 
+		<mat-label style="color:white">Post Code</mat-label>
+			<input matInput type="string" placeholder="Post Code" [(ngModel)]="addressForm.postCode">
+		</mat-form-field> 	
+		<br>
+		
+		<mat-form-field class="matformfield-width"> 
+		<mat-label style="color:white">Country</mat-label>
+			<mat-select placeholder="Select Country" type="template" [(ngModel)]="addressForm.country"> 
+				<mat-option *ngFor="let choice of countries" [value]="choice">{{choice}}</mat-option>
+			</mat-select>
+		</mat-form-field> 
+		
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button (click) = "onClickSubmit()"  type = "submit" mat-raised-button> Submit </button>
+      </div>
+ 
+  </mat-step>
+  
+  
+  

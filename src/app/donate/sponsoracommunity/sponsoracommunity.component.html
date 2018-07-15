@@ -1,18 +1,18 @@
 <!-- Page Content -->
 <div class="container">
       <!-- Page Heading/Breadcrumbs -->
-      <h1 class="mt-4 mb-3">Sponsor A Community</h1>
+      <h1 class="mt-4 mb-3">Sponsor a Community</h1>
      <ol class="breadcrumb">
        <li class="breadcrumb-item">
          <a href="index.html">Home</a>
        </li>
-       <li class="breadcrumb-item active">Sponsor A Community</li>
+       <li class="breadcrumb-item active">Sponsor a Community</li>
      </ol>
      
 	<!-- Donation Content -->
 	<div class="page-content">
 		<section class="s-donation-form intro stc-form js-donation-form loaded">
-			<div class="donate-container sponsor-a-community-bg">
+			<div class="donate-container donate-monthly-bg">
 				<div class="grid-wrapper">
 					<div class="donation-content">
 						<h2>Change a life forever</h2>
@@ -26,49 +26,31 @@
 						<div class="js-donate" data-donation-recurring="monthly donation"
 							data-donation-single="single donation" data-max-donate="50000"
 							data-min-donate="10" data-cost-per-child="2">
-							<div class="donate-msg has-msg">
-								<p class="donate-message-selected">$75 could buy aid kits for
-									two health workers.</p>
-							</div>
+							
 							<div class="donate-frequency">
-								<div tabindex="0" class="donate-option btn selected" data-freq="Single">Donate Monthly</div>
+								<div class="donation-content"><h2> Enter an amount to give</h2></div>
 							</div>
-							<div class="donate-amounts">
-								<div tabindex="0" class="donate-option btn selected" >
-									$50
-								</div>
-	
-								<div tabindex="1" class="donate-option btn  ">
-									$75
-								</div>
-	
-								<div tabindex="2" class="donate-option btn btn-bg">
-									$120
-								</div>
-	
-								<div tabindex="3" class="donate-option btn btn-bg">
-									$150
-								</div>
-	
-								<div class="donate-amount-input" >
-									<input type="number" step="1" placeholder="$ Other">
+							
+							<div class="donation-content">
+								<div class="donate-amount-input">
+									<input #otherAmount id="{{otherAmount}}" class="btn-bg" placeholder="$ Other">
 								</div>
 							</div>
+							
 						</div>
 					</div>
 	
 					<div class="submit-button-wrapper ">
-						<div class="EditingFormButtonLeftCell"></div>
 						<div class="EditingFormButtonCell">
 							<input
-								name="p$lt$ctl00$plcPageContentZone$lt$ctl00$zoneContent$STC_Control_DonationForm$ctl01$hlNext"
-								class="FormButton btn btn-large btn-primary btn-full-width js-donate-btn js-form-validate"
-								id="p_lt_ctl00_plcPageContentZone_lt_ctl00_zoneContent_STC_Control_DonationForm_ctl01_hlNext"
+								name="giveOnceBtn"
+								class="btn btn-large btn-primary btn-full-width"
+								id="giveOnceBtn"
 								type="submit" value="Donate Now">
-							
 						</div>
 						<br>
 					</div>
+					
 				</div>
 			</div>
 		</section>
@@ -96,10 +78,61 @@
 						</ul>
 
 					</div>
+					
+					
 				</div>
 			</div>
 		</section>
 	</div>
-
 </div>
+
+<div class="container">
+
+	<!-- Marketing Icons Section -->
+	<div class="row">
+		<div class="col-lg-4 mb-4">
+			<div class="card h-100">
+				<h4 class="card-header card-text-cl cardblue">Card Title</h4>
+				<div class="card-body card-body-bg">
+					<p class="card-text">Lorem ipsum dolor sit amet, consectetur
+						adipisicing elit. Sapiente esse necessitatibus neque.</p>
+				</div>
+				<div class="card-footer cardgrey">
+					<a href="#" class="btn btn-primary">Learn More</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4 mb-4">
+			<div class="card h-100">
+				<h4 class="card-header card-text-cl cardpurple">Card Title</h4>
+				<div class="card-body card-body-bg">
+					<p class="card-text">Lorem ipsum dolor sit amet, consectetur
+						adipisicing elit. Reiciendis ipsam eos, nam perspiciatis natus
+						commodi similique totam consectetur praesentium molestiae atque
+						exercitationem ut consequuntur, sed eveniet, magni nostrum sint
+						fuga.</p>
+				</div>
+				<div class="card-footer cardgrey">
+					<a href="#" class="btn btn-primary">Learn More</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4 mb-4">
+			<div class="card h-100">
+				<h4 class="card-header card-text-cl cardgreen">Card Title</h4>
+				<div class="card-body card-body-bg">
+					<p class="card-text">Lorem ipsum dolor sit amet, consectetur
+						adipisicing elit. Sapiente esse necessitatibus neque.</p>
+				</div>
+				<div class="card-footer cardgrey">
+					<a href="#" class="btn btn-primary">Learn More</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /.row -->
+</div>
+<!-- /.container -->
+
+
 

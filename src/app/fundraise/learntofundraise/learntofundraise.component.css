@@ -1,0 +1,413 @@
+a, abbr, acronym, address, applet, article, aside, audio, b, big,
+	blockquote, canvas, caption, center, cite, code, dd, del, details, dfn,
+	div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1,
+	h2, h3, h4, h5, h6, header, hgroup, i, iframe, img, ins, kbd, label,
+	legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s,
+	samp, section, small, span, strike, strong, sub, summary, sup, table,
+	tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+	margin: 0;
+	padding: 0;
+}
+
+*, ::after, ::before {
+	box-sizing: inherit;
+}
+
+/* @media screen and (min-width:1919px) */
+body {
+	max-width: 1920px;
+	border-left: 1px solid #dfdfd7;
+	border-right: 1px solid #dfdfd7;
+	margin: 0 auto;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+.fundraise-page .home-section {
+	text-align: center;
+	padding-left: 0.75em;
+	padding-right: 0.75em;
+}
+
+/* @media only screen and (min-width:1025px) */
+.fundraise-page .home-section {
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	max-width: 50em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* @media only screen and (min-width:1025px) */
+.fundraise-page .home-section {
+	max-width: 100%;
+}
+
+.fundraise-page .section-campaigning {
+	color: #fff;
+	position: relative;
+}
+
+/* @media only screen and (min-width:1025px) */
+.fundraise-page .section-campaigning {
+	text-align: left;
+}
+
+.fundraise-page .part-1 {
+	background-color: #fe5f5e;
+}
+
+.fundraise-page .section-campaigning2 {
+	text-align: left;
+}
+
+
+.container {
+	padding: 95px 20px 50px;
+	min-height: calc(100vh - 578px);
+}
+
+/* @media only screen and (min-width:641px) */
+.container {
+	min-height: calc(100vh - 489px);
+}
+
+/* @media only screen and (min-width:1025px) */
+.container {
+	min-height: calc(100vh - 374px);
+}
+
+.fundraise-page .container {
+	max-width: none;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	overflow: hidden;
+}
+
+.wrapper {
+	min-height: 100%;
+	position: relative;
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	background-color: #fff;
+	z-index: 10;
+}
+
+.wrapper {
+	z-index: 1;
+}
+
+.fundraise-page .wrapper {
+	overflow: visible;
+}
+
+body {
+	margin: 0;
+}
+
+body {
+	font-family: Proxima Nova, sans-serif;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	min-height: 100%;
+	position: relative;
+}
+
+html {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+}
+
+html {
+	font-size: 125%;
+	height: 100%;
+}
+
+/* @media screen and (min-width:1919px) */
+html {
+	background-color: #f7f7f7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 500;
+	line-height: 1.1em;
+}
+
+p {
+	line-height: 1.3em;
+}
+
+.fundraise-page h2, .fundraise-page h3, .fundraise-page h4,
+	.fundraise-page p {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.fundraise-page .home-section h2, .fundraise-page .home-section h3 {
+	font-size: 22px;
+	line-height: 1.125;
+	font-weight: 600;
+}
+
+/* @media only screen and (min-width:641px) */
+.fundraise-page .home-section h2, .fundraise-page .home-section h3 {
+	font-size: 40px;
+}
+
+.fundraise-page .part-1 h3 {
+	text-align: center;
+	padding-top: 52px;
+	position: relative;
+}
+
+.fundraise-page .inner {
+	overflow: hidden;
+	position: relative;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+/* @media only screen and (min-width:641px) */
+.fundraise-page .inner {
+	padding-top: 45px;
+}
+
+/* @media only screen and (min-width:1025px) */
+.fundraise-page .inner {
+	max-width: 980px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 60px;
+}
+
+.fundraise-page .part-1 .inner {
+	padding-bottom: 335px;
+}
+
+/* @media only screen and (min-width:641px) */
+.fundraise-page .part-1 .inner {
+	padding-bottom: 505px;
+}
+
+/* @media only screen and (min-width:1025px) */
+.fundraise-page .part-1 .inner {
+	overflow: visible;
+	padding: 60px 600px 400px 20px;
+}
+
+.fundraise-page .step-name {
+	border-radius: 3px;
+	background: rgba(0, 0, 0, .2);
+	display: inline-block;
+	letter-spacing: 0.07em;
+	margin-bottom: 16px;
+	font-weight: 600;
+	text-transform: uppercase;
+	text-align: center;
+	width: 90px;
+	height: 30px;
+	line-height: 32px;
+	font-size: 15px;
+}
+
+/* @media only screen and (min-width:641px) */
+.fundraise-page .step-name {
+	width: 110px;
+	height: 40px;
+	line-height: 42px;
+	font-size: 20px;
+}
+
+.fundraise-page .home-section h4 {
+	font-size: 30px;
+}
+
+.fundraise-page .part-1 h4 {
+	max-width: 370px;
+}
+
+/* @media only screen and (min-width:1025px) */
+.fundraise-page .part-1 h4 {
+	margin-bottom: 20px;
+	max-width: 510px;
+}
+
+ol, p, table, ul {
+	font-size: 16px;
+}
+
+.fundraise-page .home-section p {
+	line-height: 1.4;
+	margin: 10px auto;
+	font-weight: 400;
+}
+
+/* @media only screen and (min-width:641px) */
+.fundraise-page .home-section p {
+	max-width: 600px;
+}
+
+.fundraise-page .part-1 p {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 510px;
+}
+
+.fundraise-page .phone-1 {
+	z-index: 5;
+}
+
+.fundraise-page .phone {
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	max-width: 220px;
+	margin-left: -110px;
+	background-size: 100% auto;
+	padding: 1px;
+	-webkit-background-clip: content-box;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform-style: preserve-3d;
+}
+
+/* @media only screen and (min-width:641px) */
+.fundraise-page .phone {
+	max-width: 500px;
+	margin-left: -250px;
+}
+
+.fundraise-page .phone-1 {
+	bottom: -155px;
+}
+
+/* @media only screen and (min-width:641px) */
+.fundraise-page .phone-1 {
+	bottom: -30px;
+	margin-left: -245px;
+}
+
+/* @media only screen and (min-width:1025px) */
+.fundraise-page .phone-1 {
+	left: auto;
+	bottom: auto;
+	right: -10px;
+	top: 60px;
+	margin-left: 0px;
+	max-width: 56%;
+}
+
+.fundraise-page .phone-screenshot-image {
+	display: block;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.fundraise-page .phone-1-screenshot {
+	background-image:
+		url(//d26p6gt0m19hor.cloudfront.net/assets/static-pages/fundraise/screenshot-1-small-90e5c1e6364e2bc3a47ad20045f3f765.jpg);
+	width: 220px;
+	height: 438px;
+}
+
+/* @media only screen and (min-width:641px) */
+.fundraise-page .phone-1-screenshot {
+	background-image:
+		url(//d26p6gt0m19hor.cloudfront.net/assets/static-pages/fundraise/screenshot-1-medium-ef33b9e58a8a87ab491c6009ba1e8828.jpg);
+	width: 500px;
+	height: 471px;
+}
+
+/* @media only screen and (min-width:1025px) */
+.fundraise-page .phone-1-screenshot {
+	background-image:
+		url(//d26p6gt0m19hor.cloudfront.net/assets/static-pages/fundraise/screenshot-1-large-60c55415f19637dc8ae9552e1dd3ee91.jpg);
+	width: 548px;
+	height: 446px;
+}
+
+
+.part-2 {
+	background-color: #0fa3f2;
+	padding-bottom: 335px;
+	}
+
+
+/* @media only screen and (min-width:641px) */
+.part-2 {
+	padding-bottom: 505px;
+}
+
+/* @media only screen and (min-width:1025px) */
+.part-2 {
+	overflow: visible;
+	padding: 60px 600px 400px 20px;
+}
+
+/* @media only screen and (min-width:1025px) */
+.part-2 h4 {
+	margin-bottom: 20px;
+	max-width: 510px;
+}
+
+.part-2 p {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 510px;
+}
+
+.part-2 h3 {
+	text-align: center;
+	padding-top: 52px;
+	position: relative;
+}
+
+.part-2 h4 {
+	max-width: 370px;
+}
+
+
+.part-3 {
+	background-color: #179b49;
+	padding-bottom: 335px;
+	}
+
+
+/* @media only screen and (min-width:641px) */
+.part-3 {
+	padding-bottom: 505px;
+}
+
+/* @media only screen and (min-width:1025px) */
+.part-3 {
+	overflow: visible;
+	padding: 60px 600px 400px 20px;
+}
+
+/* @media only screen and (min-width:1025px) */
+.part-3 h4 {
+	margin-bottom: 20px;
+	max-width: 510px;
+}
+
+.part-3 p {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 510px;
+}
+
+.part-3 h3 {
+	text-align: center;
+	padding-top: 52px;
+	position: relative;
+}
+
+.part-3 h4 {
+	max-width: 370px;
+}
+
+
+

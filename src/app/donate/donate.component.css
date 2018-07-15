@@ -213,9 +213,9 @@ input[type='submit'].btn {
 	justify-content: center;
 }
 .s-donation-form.intro {
-	color: #fff;
+	color: #ffffff;
 	border-color:  #1e90ff;
-	background-color: #1e90ff;
+	background-color: #c0c0c0;
 }
 .s-donation-form.intro .donate-amounts .donate-option {
 	-webkit-box-orient: vertical;
@@ -417,7 +417,7 @@ p {
 }
 
 .donate-option-selected {
-	color: #fff;
+	color: #ffffff;
 	border-color:  #1e90ff;
 	background-color: #1e90ff;
 }
@@ -425,7 +425,7 @@ p {
 .donate-option-unselected {
 	color: black;
 	border-color:  #1e90ff;
-	background-color: white;
+	background-color: #ffffff;
 }
 
 .amount-selected {

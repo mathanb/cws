@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { DonateComponent } from '../donate.component';
+import { Component, OnInit, Inject, NgModule } from '@angular/core';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import {MatDialogModule} from '@angular/material/dialog';
 
 const DONATE_ONCE = "Donate Once";
 const DONATE_MONTHLY = "Donate Monthly";
@@ -34,7 +37,7 @@ export class GiveonceComponent implements OnInit {
   isAmount150UnSelected: boolean = true;
   isOtherAmountUnSelected: boolean = true;
   
-  constructor() {}
+  constructor(public dialog: MatDialog) {}
   
   ngOnInit() {
   }
@@ -57,11 +60,10 @@ export class GiveonceComponent implements OnInit {
   }
 
   
-  saveAmount(value) {
-    if(value > 0) {
-       this.donationAmount = value;
+  setOtherAmount(otherAmount) {
+    if(otherAmount > 0) {
+       this.donationAmount = otherAmount;
     }
-    alert ("You have opted for " + this.donationFrequency + " for amount $" + this.donationAmount);
   }
   
   setStyles(id) {
@@ -109,4 +111,25 @@ export class GiveonceComponent implements OnInit {
       this.isOtherAmountUnSelected = true;
     }
   }
+  
+  /**
+   * opens dialog window to capture payment details.
+   */
+  openPaymentScreen(otherAmount): void {
+    this.setOtherAmount(otherAmount);
+    
+    const dialogRef = this.dialog.open(DonateComponent, {
+      width: '900px',
+      height: '900px',
+      data: {donationFrequency: this.donationFrequency, donationAmount: this.donationAmount}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
 }
+
+
+
+

@@ -3,10 +3,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
-import { MatFormFieldModule, MatSelectModule, MatOptionModule, MatInputModule, MatButtonModule, MatIconModule, MatButtonToggleModule } from '@angular/material';
+import { MatFormFieldModule, MatSelectModule, MatOptionModule, MatInputModule, MatButtonModule,
+   MatIconModule,MatStepperModule, MatButtonToggleModule } from '@angular/material';
 import { MatProgressSpinnerModule, MatCardModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material';
+import {  creditcards } from 'angular-credit-cards';
 
 
 import { AppComponent } from './app.component';
@@ -23,7 +26,6 @@ import { FundraiseComponent } from './fundraise/fundraise.component';
 import { LearntofundraiseComponent } from './fundraise/learntofundraise/learntofundraise.component';
 import { EmailComponent } from './fundraise/email/email.component';
 import { EmailService } from './services/emailservice.service';
-
 
 
 const appRoutes: Routes = [
@@ -67,8 +69,10 @@ const appRoutes: Routes = [
     MatIconModule,
     MatProgressSpinnerModule,
     MatCardModule,
+    MatStepperModule,
     MatButtonToggleModule,
-    HttpClientModule,     
+    HttpClientModule,
+    MatDialogModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true }
@@ -90,6 +94,7 @@ const appRoutes: Routes = [
     MatCardModule,
     HttpClientModule
   ],
+  entryComponents: [DonateComponent],
   providers: [EmailService],
   bootstrap: [AppComponent]
 })
