@@ -165,7 +165,7 @@ a {
 
 a:hover {
 	color: #0056b3;
-	text-decoration: underline
+	text-decoration: none
 }
 
 a:not ([href] ):not ([tabindex] ){
@@ -2301,10 +2301,6 @@ select.form-control:focus::-ms-value {
 	.btn {
 		transition: none
 	}
-}
-
-.btn:focus, .btn:hover {
-	text-decoration: none
 }
 
 .btn.focus, .btn:focus {
@@ -5699,27 +5695,6 @@ button.close {
 	position: relative
 }
 
-.carousel-inner {
-	position: relative;
-	width: 100%;
-	overflow: hidden
-}
-
-.carousel-item {
-	position: relative;
-	display: none;
-	-ms-flex-align: center;
-	align-items: center;
-	width: 100%;
-	transition: -webkit-transform .6s ease;
-	transition: transform .6s ease;
-	transition: transform .6s ease, -webkit-transform .6s ease;
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
-	-webkit-perspective: 1000px;
-	perspective: 1000px
-	
-}
 
 @media screen and (prefers-reduced-motion:reduce) {
 	.carousel-item {
@@ -8881,19 +8856,7 @@ button[disabled], html input[disabled] {
 	-webkit-box-shadow: none;
 	box-shadow: none;
 }
-.newsletter [type='submit'].btn {
-	color: #ffffff;
-	background-color: transparent;
-	border-style: solid;
-	border-color: #DD0031;
-	border-width: 1px;
-	letter-spacing: 0.04em;
-	-webkit-transition: border-color 0.5s, color 0.5s, background-color 0.5s;
-	-moz-transition: border-color 0.5s, color 0.5s, background-color 0.5s;
-	-ms-transition: border-color 0.5s, color 0.5s, background-color 0.5s;
-	-o-transition: border-color 0.5s, color 0.5s, background-color 0.5s;
-	transition: border-color 0.5s, color 0.5s, background-color 0.5s;
-}
+
 input, textarea {
 	padding: 7px;
 	line-height: normal;
@@ -8911,35 +8874,35 @@ input, textarea {
 }
   
 .cardblue {
-	background-color: #369ff4;
+	background-color: #0d47a1;
 }
 
 .cardpurple {
-	background-color: #9064bf;
+	background-color: #6200ea;
 }
   
 .cardgreen {
-	background-color: #8ed4cc;
+	background-color: #1b5e20;
 }
 
 .cardorange {
-	background-color: #fe813a;
+	background-color: #dd2c00;
 }
 
 .cardred {
-	background-color: #fa575d;
+	background-color: #b71c1c;
 }
 
 .cardyellow {
-	background-color: #ffca0a;	
+	background-color: #ffd600;	
 }
 
 .cardpink {
-	background-color: #e83e8c;
+	background-color: #ad1457;
 }
 
 .cardindigo {
-	background-color: #6610f2;
+	background-color: #512da8;
 }
 
 .cardcyan {
@@ -8947,7 +8910,7 @@ input, textarea {
 }
 
 .cardteal {
-	background-color: #20c997;
+	background-color: #00796b;
 }
 
 .cardgrey {
@@ -8964,10 +8927,28 @@ input, textarea {
 .card-text-cl {
 	color: #ffffff;
 	font-family: "Lato", sans-serif;
+	text-align: center;
 }
 
 .card-body-bg {
-	background-color: #d1ccbd;
+	background-color: #f06292;
+}
+.body-bg-pink {
+	background-color: #fce4ec
+}
+
+.body-bg-blue {
+	background-color: #64b5f6;
+}
+.body-bg-indigo {
+	background-color: #9575cd;
+}
+
+.body-bg-green {
+	background-color: #81c784;
+}
+.body-bg-teal {
+	background-color: #4db6ac;
 }
 
 #footer {
@@ -9269,11 +9250,12 @@ h2.display {
     background-color: transparent;
     padding: 5px; 
     padding-left:15px;
-    width: 950px;
+    width: 550px;
     height:70px;  
     margin-left: calc((100% /8 * 1));  
-  	top: 250px;
-  	color:#000000;
+    position: relative;
+  	top: 130px;
+  	color:#ffffff;
 }
 
 @media only screen and (min-width: 1025px)
@@ -9295,11 +9277,48 @@ h2.display {
     padding-top: 20px!important;
 }
 
+.carousel-inner {
+	position: relative;
+	width: 100%;
+	height: 780px;
+	overflow: hidden;
+}
 
+.carousel-item {
+	position: relative;
+	display: none;
+	-ms-flex-align: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	transition: -webkit-transform .6s ease;
+	transition: transform .6s ease;
+	transition: transform .6s ease, -webkit-transform .6s ease;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-perspective: 1000px;
+	perspective: 1000px
+	
+}
 
+.btn:hover {
+    background-color: #DD0031;
+    color: white;
+}
 
-
-
+.newsletter [type='submit'].btn {
+	color: #ffffff;
+/* 	background-color: transparent; */
+	border-style: solid;
+	border-color: #DD0031;
+	border-width: 1px;
+	letter-spacing: 0.04em;
+	-webkit-transition: border-color 0.5s, color 0.5s, background-color 0.5s;
+	-moz-transition: border-color 0.5s, color 0.5s, background-color 0.5s;
+	-ms-transition: border-color 0.5s, color 0.5s, background-color 0.5s;
+	-o-transition: border-color 0.5s, color 0.5s, background-color 0.5s;
+	transition: border-color 0.5s, color 0.5s, background-color 0.5s;
+}
 
 
 

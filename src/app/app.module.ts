@@ -9,7 +9,6 @@ import { MatProgressSpinnerModule, MatCardModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material';
-import {  creditcards } from 'angular-credit-cards';
 
 
 import { AppComponent } from './app.component';
