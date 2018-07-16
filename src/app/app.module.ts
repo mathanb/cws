@@ -9,6 +9,8 @@ import { MatProgressSpinnerModule, MatCardModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material';
+
+
 import { AppComponent } from './app.component';
 import { AppheaderComponent } from './appheader/appheader.component';
 import { HomepageComponent } from './homepage/homepage.component';
@@ -23,7 +25,6 @@ import { FundraiseComponent } from './fundraise/fundraise.component';
 import { LearntofundraiseComponent } from './fundraise/learntofundraise/learntofundraise.component';
 import { EmailComponent } from './fundraise/email/email.component';
 import { EmailService } from './services/emailservice.service';
-import { LearnmoreComponent } from './learnmore/learnmore.component';
 
 
 const appRoutes: Routes = [
@@ -35,7 +36,6 @@ const appRoutes: Routes = [
   { path: 'app-sac', component: SponsoracommunityComponent },  
   { path: 'app-email', component: EmailComponent },
   { path: 'app-learntofundraise', component: LearntofundraiseComponent },
-  { path: 'app-learnmore', component: LearnmoreComponent },
   { path: '', component: HomepageComponent }
 ];
 
@@ -53,8 +53,7 @@ const appRoutes: Routes = [
     SponsoracommunityComponent,
     FundraiseComponent,
     LearntofundraiseComponent,
-    EmailComponent,
-    LearnmoreComponent
+    EmailComponent
   ],
   imports: [
     BrowserModule,

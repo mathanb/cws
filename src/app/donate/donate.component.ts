@@ -26,7 +26,8 @@ export class DonateComponent implements OnInit {
     description: '',
     nameOnCard: '',
     cardNumber: '',
-    expiry: '',
+    exp_month:'',
+    exp_year:'',
     cvc:'',
     email: ''
   };
