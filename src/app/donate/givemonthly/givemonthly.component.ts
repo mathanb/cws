@@ -3,7 +3,7 @@ import { Component, OnInit, Inject, NgModule  } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {MatDialogModule} from '@angular/material/dialog';
 
-
+const DONATE_MONTHLY = "Donate Monthly";
 
 @Component({
   selector: 'app-givemonthly',
@@ -18,6 +18,7 @@ export class GivemonthlyComponent implements OnInit {
   amount150 = 150;
   otherAmount = 0;
   donationAmount = this.amount50;
+  donationFrequency = DONATE_MONTHLY;
   
   isAmount50Selected: boolean = true;
   isAmount75Selected: boolean = false;
@@ -105,9 +106,9 @@ export class GivemonthlyComponent implements OnInit {
     this.setOtherAmount(otherAmount);
     
     const dialogRef = this.dialog.open(DonateComponent, {
-      width: '900px',
-      height: '900px',
-      data: {donationAmount: this.donationAmount}
+      width: '800px',
+      height: '600px',
+      data: {donationFrequency: this.donationFrequency, donationAmount: this.donationAmount}
     });
 
     dialogRef.afterClosed().subscribe(result => {

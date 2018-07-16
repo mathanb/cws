@@ -66,17 +66,17 @@ html {
 
 .container {
 	padding: 95px 20px 50px;
-	min-height: calc(100vh - 578px);
+	/* min-height: calc(100vh - 578px); */
 }
 
 /* @media only screen and (min-width:641px) */
 .container {
-	min-height: calc(100vh - 489px);
+	/* min-height: calc(100vh - 489px); */
 }
 
 /* @media only screen and (min-width:1025px) */
 .container {
-	min-height: calc(100vh - 374px);
+	/* min-height: calc(100vh - 374px); */
 }
 
 .fundraise-page .container {
@@ -196,7 +196,7 @@ p {
 /* @media only screen and (min-width:1025px) */
 .fundraise-page .part-1 .inner {
 	overflow: visible;
-	padding: 60px 600px 400px 20px;
+	padding: 60px 600px 50px 20px;
 }
 
 .fundraise-page .step-name {
@@ -281,7 +281,7 @@ ol, p, table, ul {
 }
 
 .fundraise-page .phone-1 {
-	bottom: -155px;
+	bottom: -100px;
 }
 
 /* @media only screen and (min-width:641px) */
@@ -308,7 +308,7 @@ ol, p, table, ul {
 
 .fundraise-page .phone-1-screenshot {
 	background-image:
-		url(//d26p6gt0m19hor.cloudfront.net/assets/static-pages/fundraise/screenshot-1-small-90e5c1e6364e2bc3a47ad20045f3f765.jpg);
+		url(../../../assets/fundraise1.jpg);
 	width: 220px;
 	height: 438px;
 }
@@ -316,7 +316,7 @@ ol, p, table, ul {
 /* @media only screen and (min-width:641px) */
 .fundraise-page .phone-1-screenshot {
 	background-image:
-		url(//d26p6gt0m19hor.cloudfront.net/assets/static-pages/fundraise/screenshot-1-medium-ef33b9e58a8a87ab491c6009ba1e8828.jpg);
+		url(../../../assets/fundraise1.jpg);
 	width: 500px;
 	height: 471px;
 }
@@ -324,10 +324,58 @@ ol, p, table, ul {
 /* @media only screen and (min-width:1025px) */
 .fundraise-page .phone-1-screenshot {
 	background-image:
-		url(//d26p6gt0m19hor.cloudfront.net/assets/static-pages/fundraise/screenshot-1-large-60c55415f19637dc8ae9552e1dd3ee91.jpg);
+		url(../../../assets/fundraise1.jpg);
 	width: 548px;
 	height: 446px;
 }
+
+
+.fundraise-page .phone-2-screenshot {
+	background-image:
+		url(../../../assets/corporate-fundraising-ideas.png);
+	width: 220px;
+	height: 438px;
+}
+
+/* @media only screen and (min-width:641px) */
+.fundraise-page .phone-2-screenshot {
+	background-image:
+		url(../../../assets/corporate-fundraising-ideas.png);
+	width: 500px;
+	height: 471px;
+}
+
+/* @media only screen and (min-width:1025px) */
+.fundraise-page .phone-2-screenshot {
+	background-image:
+		url(../../../assets/corporate-fundraising-ideas.png);
+	width: 548px;
+	height: 446px;
+}
+
+.fundraise-page .phone-3-screenshot {
+	background-image:
+		url(../../../assets/cbre-charity-bike-ride-2012-m2.jpg);
+	width: 220px;
+	height: 438px;
+}
+
+/* @media only screen and (min-width:641px) */
+.fundraise-page .phone-3-screenshot {
+	background-image:
+		url(../../../assets/cbre-charity-bike-ride-2012-m2.jpg);
+	width: 500px;
+	height: 471px;
+}
+
+/* @media only screen and (min-width:1025px) */
+.fundraise-page .phone-3-screenshot {
+	background-image:
+		url(../../../assets/cbre-charity-bike-ride-2012-m2.jpg);
+	width: 548px;
+	height: 446px;
+}
+
 
 
 .part-2 {
@@ -344,7 +392,7 @@ ol, p, table, ul {
 /* @media only screen and (min-width:1025px) */
 .part-2 {
 	overflow: visible;
-	padding: 60px 600px 400px 20px;
+	padding: 60px 600px 50px 20px;
 }
 
 /* @media only screen and (min-width:1025px) */
@@ -378,13 +426,13 @@ ol, p, table, ul {
 
 /* @media only screen and (min-width:641px) */
 .part-3 {
-	padding-bottom: 505px;
+	padding-bottom: 20px;
 }
 
 /* @media only screen and (min-width:1025px) */
 .part-3 {
 	overflow: visible;
-	padding: 60px 600px 400px 20px;
+	padding: 60px 600px 50px 20px;
 }
 
 /* @media only screen and (min-width:1025px) */

@@ -1,101 +1,157 @@
- <mat-vertical-stepper [linear]="isLinear" #stepper>
-  <mat-step [stepControl]="cardFormGroup">
- 
-		<mat-form-field class="matformfield-width" > 
-		<mat-label style="color:white">Amount To Pay</mat-label>
-			<input matInput type="number" placeholder="Amount to pay" [(ngModel)]="cardForm.amountToPay">
-		</mat-form-field> 	
-		<br>
+<title>Make a payment to CWS - Pin Payments</title>
+
+<!--[if IE 8]>
+<link rel="stylesheet" media="screen" href="/assets/payment_page/ie8-9d7441104fe4cd4d7526b0c0fb85bf10.css" />
+<![endif]-->
+
+<body class='payment-page-form overlay'>
+
+	<div class='main'>
+		<div class='card-types'>
+			<div class='master'></div>
+			<div class='visa'></div>
+		</div>
+		<header>
+			<h1>
+				Make a payment to<br> CWS
+			</h1>
+		</header>
+
+<form [formGroup] = "paymentForm" (ngSubmit) = "onClickSubmit(paymentForm.value)" class="pay" novalidate="novalidate" action="" accept-charset="UTF-8" method="post">
 		
-		<mat-form-field class="matformfield-width"> 
-		<mat-label style="color:white">Description</mat-label>
-			<input matInput type="string" placeholder="Description" [(ngModel)]="cardForm.description" > 
-		</mat-form-field> 	
-		<br>
-		
-		<mat-form-field class="matformfield-width"> 
-		<mat-label style="color:white">Name On Card</mat-label>
-			<input matInput type="string" placeholder="Name On Card" [(ngModel)]="cardForm.nameOnCard">
-		</mat-form-field> 
-		<br>
-	
-		<mat-form-field class="matformfield-width"> 
-		<mat-label style="color:white">Card Number</mat-label>
-			<input matInput type="text" ng-model="cardForm.cardNumber" ng-required="true" />
-		</mat-form-field> 	
+			<input name="utf8" type="hidden" value="&#x2713;" />
+			<input type="hidden" name="authenticity_token" value="" />
 			
-		<mat-form-field class="matformfield-width"> 
-		<mat-label style="color:white">Expiry month(mm)</mat-label>
-			<input matInput placeholder="mm" ng-model="cardForm.exp_month" ng-required="true" />
-		</mat-form-field> 	
-		
-		<mat-form-field class="matformfield-width"> 
-		<mat-label style="color:white">Expiry year(yy)</mat-label>
-			<input matInput placeholder="yy" ng-model="cardForm.exp_year" ng-required="true" />
-		</mat-form-field> 	
-	
-		<mat-form-field class="matformfield-width"> 
-		<mat-label style="color:white">CVC</mat-label>
-			<input matInput type="number" placeholder="CVC" [(ngModel)]="cardForm.cvc"> 
-		</mat-form-field> 	
-		<br>
-		
-		<mat-form-field class="matformfield-width"> 
-		<mat-label style="color:white">Email</mat-label>
-			<input matInput type="email" placeholder="Email" [(ngModel)]="cardForm.email"> 
-		</mat-form-field> 	
-		
+			<div class='step' [ngClass]="{'active': isCardPage, 'hidden': isAddressPage }">
+				<section>
+					<fieldset>
+					 <div class="control-group form-group">
+						<label for='charge_amount'> Amount to Pay <span
+							class='input-right-hint'>AUD</span>
+						</label> <input type="text" name="charge[amount]" id="charge_amount" formControlName= "amountToPay"
+							value="{{donationAmount}}" required="required" data-validate="amount" />
+					</div>
+					</fieldset>
+				</section>
 
-		<div>
-      		<button mat-button matStepperNext>Next</button>
-    	</div>
- 	
-  </mat-step>
+				<section>
+					<fieldset>
+					 <div class="control-group form-group">
+						<label for='charge_description'>Description</label>
+						
+						<input type="string" value="{{donationFrequency}}" formControlName= "description" />
+					</div>
+					</fieldset>
+				</section>
 
-  <mat-step [stepControl]="cardFormGroup">
-  
-      <ng-template matStepLabel>Payment Details</ng-template>
-     <mat-form-field class="matformfield-width" > 
-		<mat-label style="color:white">Address Line 1</mat-label>
-			<input matInput type="string" placeholder="Address Line 1" [(ngModel)]="addressForm.addressLine1" > 
-		</mat-form-field> 	
-		<br>
+				<section>
+					<div class='card-name form-group'>
+						<label for="charge_card_name">Name on Card</label> <input
+							required="required" autocomplete="cc-name"
+							data-validate="cc-name" type="text" name="charge[card][name]"
+							id="charge_card_name" formControlName= "nameOnCard" />
+
+					</div>
+					<fieldset class='thirds card'>
+					 <div class="control-group form-group">
+					<div id="wrapper">
+						<div class='field-1 number' id="first">
+							<label for="charge_card_number">Card Number</label> 
+							<input autocapitalize="off" placeholder="---- ---- ---- ----"
+								required="required" autocomplete="cc-number"
+								data-validate="cc-number" pattern="\d+[\d\s]*" type="text"
+								name="charge[card][number]" id="charge_card_number" formControlName= "cardNumber" />
+						</div>
+						<div class='field-2 expiry' id="second">
+							<label for="charge_card_expiry">Expiry</label> 
+							<input placeholder="MM/YY" pattern="\d+[\d\s/]*" class="field-1"
+								required="required" autocomplete="cc-exp" data-validate="cc-exp"
+								type="text" name="charge[card][expiry]" id="charge_card_expiry" formControlName= "expiry" />
+						</div>
+						<div class='field-3 cvc' id="third">
+							<label for="charge_card_cvc">CVC</label> 
+							<input pattern="\d*" autocomplete="off" required="required" data-validate="cc-cvc"
+								type="text" name="charge[card][cvc]" id="charge_card_cvc" formControlName= "cvc"/>
+						</div>
+						<br>
+					<button type="button" class="button-red btn btn-secondary" (click)="nextPage()">NEXT &gt;&gt;</button>
+					</div>
+					</div>
+				</fieldset>
+					<br>
+				</section>
+
+				<section class=''>
+				<fieldset>
+					<br>
+					<button type="submit" class="button-red btn btn-secondary" (click)="nextPage()">NEXT &gt;&gt;</button>
+				</fieldset>
+				</section>
+			</div>
+			<div class='step' [ngClass]="{'hidden': isCardPage, 'active': isAddressPage }">
+				<section>
+					<fieldset>
+					 <div class="control-group form-group">
+						<label for="charge_card_address_line1">Address Line 1</label> <input
+							class="field-1" required="required" autocomplete="address-line1"
+							type="text" name="charge[card][address_line1]"
+							id="charge_card_address_line1" formControlName= "addressLine1"/> <label
+							for="charge_card_address_line2">Address Line 2 (optional)</label>
+						<input class="field-2" autocomplete="address-line2" type="text"
+							name="charge[card][address_line2]" id="charge_card_address_line2" formControlName= "addressLine2" />
+					</div>
+					</fieldset>
+					<fieldset class='thirds city-state-postcode'>
+					 <div class="control-group form-group">
+						<div class='field-1'>
+							<label for="charge_card_address_city">City</label> <input
+								required="required" autocomplete="city" type="text"
+								name="charge[card][address_city]" id="charge_card_address_city" formControlName= "city"/>
+						</div>
+						<div class='field-2'>
+							<label for="charge_card_address_state">State</label> <input
+								required="required" autocomplete="state" type="text"
+								name="charge[card][address_state]"
+								id="charge_card_address_state" formControlName= "state"/>
+						</div>
+						<div class='field-3'>
+							<label for="charge_card_address_postcode">Postcode</label> <input
+								required="required" autocomplete="postal-code" type="text"
+								name="charge[card][address_postcode]"
+								id="charge_card_address_postcode" formControlName= "postCode"/>
+						</div>
+						<div class='error-group'></div>
+						<label for="charge_card_address_country">Country</label> <select
+							required="required" name="charge[card][address_country]" formControlName= "country"
+							id="charge_card_address_country"><option></option>
+							<option value="AU">Australia</option>
+							<option value="NZ">New Zealand</option>
+							<option value="US">United States</option>
+							<option value="CA">Canada</option>
+							<option value="GB">United Kingdom</option>
+							<option value="" disabled="disabled">-------------</option>
+						</select>
+					</div>
+					</fieldset>
+				</section>
+
+				<section class=''>
+					<br>
+					<table cellspacing = "10px" cellpadding="10px">
+					<tr>
+						<td width="20%" align="left"><button type="button" class="button-red btn btn-secondary" (click)="prevPage()">&lt;&lt; PREV</button> </td>
+						<td width="80%" align="center"><button type="submit" class="button-red btn btn-secondary">PAY NOW</button> </td>
+					</tr>
+					</table>
+				</section>
+			</div>
 		
-		<mat-form-field class="matformfield-width" > 
-		<mat-label style="color:white">Address Line 2</mat-label>
-			<input matInput type="string" placeholder="Address Line 2" [(ngModel)]="addressForm.addressLine2"> 
-		</mat-form-field> 	
-		<br>
-		
-		<mat-form-field class="matformfield-width" > 
-		<mat-label style="color:white">City</mat-label>
-			<input matInput type="string" placeholder="City" [(ngModel)]="addressForm.city">
-		</mat-form-field> 	
-		
-		<mat-form-field class="matformfield-width" > 
-		<mat-label style="color:white">State</mat-label>
-			<input matInput type="string" placeholder="State" [(ngModel)]="addressForm.state">
-		</mat-form-field> 	
-		
-		<mat-form-field class="matformfield-width" > 
-		<mat-label style="color:white">Post Code</mat-label>
-			<input matInput type="string" placeholder="Post Code" [(ngModel)]="addressForm.postCode">
-		</mat-form-field> 	
-		<br>
-		
-		<mat-form-field class="matformfield-width"> 
-		<mat-label style="color:white">Country</mat-label>
-			<mat-select placeholder="Select Country" type="template" [(ngModel)]="addressForm.country"> 
-				<mat-option *ngFor="let choice of countries" [value]="choice">{{choice}}</mat-option>
-			</mat-select>
-		</mat-form-field> 
-		
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button (click) = "onClickSubmit()"  type = "submit" mat-raised-button> Submit </button>
-      </div>
- 
-  </mat-step>
-  
-  
-  
+		</form>
+
+	</div>
+	<p class='by'>
+		<a href="https://pinpayments.com/?utm_source=payment_page">Powered
+			by Pin Payments</a>
+	</p>
+</body>
+

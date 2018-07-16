@@ -10,33 +10,25 @@ import {MatDialogModule} from '@angular/material/dialog';
 })
 export class SponsoracommunityComponent implements OnInit {
 
-   otherAmount = 0;
-  donationAmount = this.otherAmount;
-  
- 
-  
+  donationAmount;
+  donationFrequency = "Sponser a Community";
   constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
   }
   
-  setOtherAmount(otherAmount) {
-    if(otherAmount > 0) {
-       this.otherAmount = otherAmount;
-    }
-  }
-  
    
- openPaymentScreen(otherAmount): void {
-    this.setOtherAmount(otherAmount);
+ openPaymentScreen(amount): void {
+
+    this.donationAmount = amount;
    
-    
     const dialogRef = this.dialog.open(DonateComponent, {
-      width: '900px',
-      height: '900px',
-      data: {donationAmount: this.donationAmount}
+      width: '800px',
+      height: '600px',
+      data: {donationFrequency: this.donationFrequency, donationAmount: this.donationAmount}
     });
 
+ 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });

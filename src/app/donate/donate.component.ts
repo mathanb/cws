@@ -10,38 +10,20 @@ export interface DialogData {
 @Component({
   selector: 'app-donate',
   templateUrl: './donate.component.html',
-  styleUrls: ['./donate.component.css']
+  styleUrls: ['./donate.component2.css', './donate.component.css']
 })
 export class DonateComponent implements OnInit {
 
   donationFrequency;
   donationAmount;
+  isCardPage = true;
+  isAddressPage = false;
   
   isLinear = false;
-  addressFormGroup: FormGroup;
-  cardFormGroup: FormGroup;
+  paymentForm: FormGroup;
+
   
-  cardForm = {
-    amountToPay: '',
-    description: '',
-    nameOnCard: '',
-    cardNumber: '',
-    exp_month:'',
-    exp_year:'',
-    cvc:'',
-    email: ''
-  };
-  
-  addressForm = {
-    addressLine1: '',
-    addressLine2: '',
-    city: '',
-    state: '',
-    postCode:'',
-    country:'',
-  };
-  
-  countries = ["india", "australia", "england"];
+
 
   /**
    * constructor
@@ -55,6 +37,20 @@ export class DonateComponent implements OnInit {
     
     console.log("Donation Frequency is " + this.donationFrequency + " Amount is " + this.donationAmount);
    
+    this.paymentForm = new FormGroup({
+      amountToPay: new FormControl(),
+      description: new FormControl(),
+      nameOnCard: new FormControl(),
+      cardNumber: new FormControl(),
+      expiry: new FormControl(),
+      cvc: new FormControl(),
+      addressLine1: new FormControl(),
+      addressLine2: new FormControl(),
+      city: new FormControl(),
+      state: new FormControl(),
+      postCode: new FormControl(),
+      country: new FormControl()
+      });
   }
 
   /**
@@ -69,20 +65,26 @@ export class DonateComponent implements OnInit {
    * called when class is instantiated.
    */
   ngOnInit() {
-    this.addressFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required]
-    });
-    this.cardFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
-    });
+    
   }
   
+ 
+  nextPage() {
+    this.isCardPage = false;
+    this.isAddressPage = true;
+  }
+  
+  prevPage() {
+    this.isCardPage = true;
+    this.isAddressPage = false;
+  }  
+  
    public onClickSubmit(value) {
-console.log(this.cardForm.amountToPay + "   " + this.cardForm.description + "   " + this.cardForm.nameOnCard + "   " + this.cardForm.cardNumber + "    " + this.cardForm.cvc + "   " + this.cardForm.email + "   " + this.addressForm.addressLine1 + "   " + this.addressForm.addressLine2 + "   " + this.addressForm.city + "   " + this.addressForm.state + "   " + this.addressForm.postCode + "   " + this.addressForm.country);
-             }
+   alert(value.amountToPay + value.description + value.nameOnCard + value.cardNumber + value.expiry + value.cvc + value.addressLine1 + value.addressLine2 + value.city + value.state + value.postCode + value.country);
+   }
   
 }
-  // create a new method which should be called on click submit button.
+
 
 
 

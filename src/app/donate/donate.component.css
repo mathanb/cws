@@ -69,19 +69,7 @@ button, input, optgroup, select, textarea {
 button, input {
 	overflow: visible;
 }
-.clickdform input, input {
-	font-size: 1rem;
-	line-height: 1.25;
-	width: 100%;
-	height: 56px;
-	padding: 16px;
-	border: 1px solid #cdcdcd;
-	border-radius: 6px;
-	color: #4a4f53;
-	background-color: #fff;
-	transition: border-color .2s ease-in-out;
-	font-family: "Gill Sans Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
-}
+
 button, html [type='button'], [type='reset'], [type='submit'] {
 	-webkit-appearance: button;
 }
@@ -439,3 +427,133 @@ p {
 	border-color:  #1e90ff;
 	background-color: white;
 }
+
+.payment-page-form .card-types > div {
+	width: 24px;
+	height: 24px;
+	float: right;
+}
+.payment-page-form .card-types .visa {
+	background: url(/assets/cc_icons/visa-95b78b8e0b12a0eab54df8fe077c37fa.png) top center no-repeat;
+	background-size: 24px;
+}
+.payment-page-form .card-types .master {
+	background: url(/assets/cc_icons/master-537b9222741d672a26aa88a7a55919dd.png) top center no-repeat;
+	background-size: 24px;
+}
+.payment-page-form .card-types {
+	position: absolute;
+	top: 14px;
+	right: 20px;
+}
+.popup-main {
+	position: relative;
+	max-width: 400px;
+	margin: 40px auto 40px auto;
+	background: white;
+	padding: 0;
+	border: 1px solid white;
+	border-radius: 10px;
+	box-shadow: inset 0px 0px 12px #f9f9f9, 0px 0px 4px #dddddd;
+}
+
+
+.payment-page-form input, .payment-page-form button, .payment-page-form select {
+	width: 100%;
+}
+.payment-page-form input {
+	font-size: 14px;
+	font-family: sans-serif;
+	text-indent: 0px;
+	padding-left: 8px;
+	border: 1px solid #dddddd;
+	border-radius: 4px;
+	min-height: 40px;
+	margin-bottom: 20px;
+	box-shadow: inset 0px 1px 3px #eeeeee, inset 0px -1px 0px white;
+	color: #333333;
+	-webkit-transition: border-color 300ms;
+	transition: border-color 300ms;
+}
+.payment-page-form.overlay form.pay section input {
+	margin-bottom: 10px;
+}
+.payment-page-form form.pay section {
+	border-top: 1px solid #eeeeee;
+	margin: 0 -20px;
+	padding: 20px 20px 0 20px;
+}
+.overlay form.pay section {
+	border-top: none;
+}
+.payment-page-form.overlay form.pay section {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+.payment-page-form.overlay form.pay .step {
+	position: absolute;
+	width: 100%;
+	height: 400px;
+	overflow: hidden;
+	top: 0px;
+	left: 0px;
+	padding: 0 20px;
+	-webkit-transition-property: left, opacity;
+	transition-property: left, opacity;
+	-webkit-transition-duration: 300ms;
+	transition-duration: 300ms;
+	opacity: 1;
+}
+.payment-page-form.overlay form.pay .step.active {
+	left: 0px;
+	opacity: 1;
+}
+.payment-page-form form.pay {
+	max-width: 400px;
+	margin: 20px auto;
+	padding: 0 20px;
+}
+.main {
+	position: relative;
+	max-width: 400px;
+	margin: 40px auto 40px auto;
+	background: white;
+	padding: 0;
+	border: 1px solid white;
+	border-radius: 10px;
+	box-shadow: inset 0px 0px 12px #f9f9f9, 0px 0px 4px #dddddd;
+}
+html {
+	font-family: sans-serif;
+	color: #555555;
+	background: #fafafa;
+	background: -webkit-linear-gradient(top, #fafafa, #efeff0);
+	background: linear-gradient(to bottom, #fafafa, #efeff0);
+	min-height: 100%;
+}
+.overlay {
+	background: transparent;
+	padding: 20px;
+}
+.overlay, .overlay body, .overlay .main, .overlay form.pay {
+	height: 100%;
+	overflow: hidden;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+.overlay .main, .overlay form.pay {
+	max-width: none;
+}
+.payment-page-form.overlay form.pay {
+	margin-bottom: 0px;
+	position: relative;
+	overflow: hidden;
+}
+.overlay .main {
+	margin: 0;
+	border: none;
+	box-shadow: none;
+}
+
+
+
