@@ -120,7 +120,7 @@ export class GiveonceComponent implements OnInit {
     
     const dialogRef = this.dialog.open(DonateComponent, {
       width: '800px',
-      height: '800px',
+      height: '600px',
       data: {donationFrequency: this.donationFrequency, donationAmount: this.donationAmount}
     });
 

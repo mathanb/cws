@@ -33,6 +33,7 @@ import { Project4Component } from './projects/project4/project4.component';
 import { CleanenergyrequirementComponent } from './projects/cleanenergyrequirement/cleanenergyrequirement.component';
 import { Project6Component } from './projects/project6/project6.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { PaymentServiceClient } from './services/paymentserviceclient.service';
 
 
 
@@ -119,7 +120,7 @@ const appRoutes: Routes = [
     HttpClientModule
   ],
   entryComponents: [DonateComponent],
-  providers: [EmailServiceClient],
+  providers: [EmailServiceClient,PaymentServiceClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

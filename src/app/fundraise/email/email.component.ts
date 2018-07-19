@@ -43,7 +43,7 @@ export class EmailComponent implements OnInit {
   displayResult = false;
   result = "";
   showSpinner: boolean = false;
-  
+  // dependency injection
   constructor(public emailService: EmailServiceClient) {
     this.emailForm = new FormGroup({
       emailMessageTemplate: new FormControl(),
