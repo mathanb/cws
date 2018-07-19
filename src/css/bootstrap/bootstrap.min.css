@@ -2278,25 +2278,6 @@ select.form-control:focus::-ms-value {
 	}
 }
 
-.btn {
-	display: inline-block;
-	font-weight: 400;
-	text-align: center;
-	white-space: nowrap;
-	vertical-align: middle;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	border: 1px solid transparent;
-	padding: .375rem .75rem;
-	font-size: 1rem;
-	line-height: 1.5;
-	border-radius: .25rem;
-	transition: color .15s ease-in-out, background-color .15s ease-in-out,
-		border-color .15s ease-in-out, box-shadow .15s ease-in-out
-}
-
 @media screen and (prefers-reduced-motion:reduce) {
 	.btn {
 		transition: none
@@ -2325,34 +2306,6 @@ a.btn.disabled, fieldset:disabled a.btn {
 	pointer-events: none
 }
 
-
-
-.btn-primary:not (:disabled ):not (.disabled ).active, .btn-primary:not
-	(:disabled ):not (.disabled ):active, .show>.btn-primary.dropdown-toggle
-	{
-	color: #fff;
-	background-color: #0062cc;
-	border-color: #005cbf
-}
-
-.btn-primary:not (:disabled ):not (.disabled ).active:focus,
-	.btn-primary:not (:disabled ):not (.disabled ):active:focus, .show>.btn-primary.dropdown-toggle:focus
-	{
-	box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .5)
-}
-
-.btn-secondary {
-	color: #fff;
-	background-color: #6c757d;
-	border-color: #6c757d
-}
-
-.btn-secondary:hover {
-	color: #fff;
-	background-color: #5a6268;
-	border-color: #545b62
-}
-
 .btn-secondary.focus, .btn-secondary:focus {
 	box-shadow: 0 0 0 .2rem rgba(108, 117, 125, .5)
 }
@@ -2360,7 +2313,7 @@ a.btn.disabled, fieldset:disabled a.btn {
 .btn-secondary.disabled, .btn-secondary:disabled {
 	color: #fff;
 	background-color: #6c757d;
-	border-color: #6c757d
+	border-color: #dd0031;
 }
 
 .btn-secondary:not (:disabled ):not (.disabled ).active, .btn-secondary:not
@@ -2368,7 +2321,7 @@ a.btn.disabled, fieldset:disabled a.btn {
 	{
 	color: #fff;
 	background-color: #545b62;
-	border-color: #4e555b
+	border-color: #dd0031;
 }
 
 .btn-secondary:not (:disabled ):not (.disabled ).active:focus,
@@ -2380,7 +2333,7 @@ a.btn.disabled, fieldset:disabled a.btn {
 .btn-success {
 	color: #fff;
 	background-color: #28a745;
-	border-color: #28a745
+	border-color: #dd0031;
 }
 
 .btn-success:hover {
@@ -8826,26 +8779,7 @@ input, button, select, textarea {
 	font-size: inherit;
 	line-height: inherit;
 }
-.btn {
-	display: inline-block;
-	margin-bottom: 0px;
-	font-weight: normal;
-	text-align: center;
-	vertical-align: middle;
-	touch-action: manipulation;
-	cursor: pointer;
-	background-image: none;
-	border: 1px solid transparent;
-	white-space: nowrap;
-	padding: 6px 12px;
-	font-size: 14px;
-	line-height: 1.4285;
-	border-radius: 4px;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-}
+
 button[disabled], html input[disabled] {
 	cursor: default;
 }
@@ -9320,14 +9254,65 @@ h2.display {
 	transition: border-color 0.5s, color 0.5s, background-color 0.5s;
 }
 
+.btn {
+	display: inline-block;
+	margin-bottom: 0px;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: middle;
+	touch-action: manipulation;
+	cursor: pointer;
+	background-image: none;
+	border: 1px solid;
+	border-color: #dd0031;
+	white-space: nowrap;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.4285;
+	border-radius: 4px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
 
+.btn-primary:not (:disabled ):not (.disabled ).active, .btn-primary:not
+	(:disabled ):not (.disabled ):active, .show>.btn-primary.dropdown-toggle
+	{
+	color: #fff;
+	background-color: #0062cc;
+	border-color: #005cbf
+}
 
+.btn-primary:not (:disabled ):not (.disabled ).active:focus,
+	.btn-primary:not (:disabled ):not (.disabled ):active:focus, .show>.btn-primary.dropdown-toggle:focus
+	{
+	box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .5)
+}
 
+.btn-secondary {
+	color: #fff;
+	background-color: #3c3c3c;
+	border-color: #dd0031
+}
 
+.btn-secondary:hover {
+	color: #fff;
+	background-color: #dd0031;
+	border-color: #dd0031;
+}
 
+.btn-border {
+	border-color: #dd0031;
+}
 
+.textarea-size {
+	line-height: 10;
+}
 
-
+.select-choice {
+	color: black;
+}
 
 
 

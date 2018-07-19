@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { EmailService } from '../../services/emailservice.service';
+import { EmailServiceClient } from '../../services/emailserviceclient.service';
 import { MatProgressSpinnerModule, MatCardModule } from '@angular/material';
 
 const  birthdayMsgTemplate = "birthday message fidjfoseifoiej foewjfiicoi";
@@ -27,7 +27,7 @@ const  otherMsgTemplate = "skrjfrjfomro ofjopskfork";
     HttpClientModule
   ],
   declarations: [],
-  providers: [EmailService]
+  providers: [EmailServiceClient]
 })
 @Component({
   selector: 'app-email',
@@ -44,7 +44,7 @@ export class EmailComponent implements OnInit {
   result = "";
   showSpinner: boolean = false;
   
-  constructor(public emailService: EmailService) {
+  constructor(public emailService: EmailServiceClient) {
     this.emailForm = new FormGroup({
       emailMessageTemplate: new FormControl(),
       fullName: new FormControl(),
@@ -63,11 +63,10 @@ export class EmailComponent implements OnInit {
   /**
    * Choose email message based on the template selected. 
    */
-  public changeMessageTemplate(event) {
-
-    if(event.value == this.emailTemplates[0]) { // Birthday
+  changeMessageTemplate(value) {
+    if(value == this.emailTemplates[0]) { // Birthday
       this.emailForm.patchValue({emailMessage: birthdayMsgTemplate});
-    } else if (event.value == this.emailTemplates[1]) { // Marriage
+    } else if (value == this.emailTemplates[1]) { // Marriage
       this.emailForm.patchValue({emailMessage: anniversaryMsgTemplate});
     } else { 
       this.emailForm.patchValue({emailMessage: otherMsgTemplate}); //others
@@ -84,16 +83,16 @@ export class EmailComponent implements OnInit {
       this.emailService.sendEmail(params)
         .subscribe(resp => {
           console.log(resp, "res");
-          this.serviceResponse = resp
+          this.serviceResponse = resp;
+           this.displayResult = true;
+      this.result = this.serviceResponse.result;
         },
         error => {
           console.log(error, "error");
         });
-      this.displayResult = true;
-      this.result = this.serviceResponse.result;
+      
     } catch (e) {
-      console.log(e);
-      this.result = "Email Failed. Please try after sometime.";
+         this.result = "Email Failed. Please try after sometime.";
     }
     
     setTimeout(() => {

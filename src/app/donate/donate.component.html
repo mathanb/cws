@@ -25,12 +25,13 @@
 		</mat-form-field> 	
 			
 		<mat-form-field class="matformfield-width"> 
-		<mat-label style="color:white">Expiry</mat-label>
-		<div cc-exp>
-			<input matInput ng-model="cardForm.exp_month" ng-required="true" />
-  			<input matInput ng-model="cardForm.exp_year" ng-required="true" />
-		</div>
+		<mat-label style="color:white">Expiry month(mm)</mat-label>
+			<input matInput placeholder="mm" ng-model="cardForm.exp_month" ng-required="true" />
+		</mat-form-field> 	
 		
+		<mat-form-field class="matformfield-width"> 
+		<mat-label style="color:white">Expiry year(yy)</mat-label>
+			<input matInput placeholder="yy" ng-model="cardForm.exp_year" ng-required="true" />
 		</mat-form-field> 	
 	
 		<mat-form-field class="matformfield-width"> 

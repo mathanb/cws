@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { DonateComponent } from '../donate.component';
+import { Component, OnInit, Inject, NgModule  } from '@angular/core';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import {MatDialogModule} from '@angular/material/dialog';
+
+
 
 @Component({
   selector: 'app-givemonthly',
@@ -27,7 +32,7 @@ export class GivemonthlyComponent implements OnInit {
   isAmount150UnSelected: boolean = true;
   isOtherAmountUnSelected: boolean = true;
   
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
   }
@@ -37,6 +42,11 @@ export class GivemonthlyComponent implements OnInit {
     this.setStyles(id);
   }
 
+  setOtherAmount(otherAmount) {
+    if(otherAmount > 0) {
+       this.donationAmount = otherAmount;
+    }
+  }
   
   saveAmount(value) {
     if(value > 0) {
@@ -89,6 +99,20 @@ export class GivemonthlyComponent implements OnInit {
       this.isOtherAmountSelected = false;
       this.isOtherAmountUnSelected = true;
     }
+  }
+  
+   openPaymentScreen(otherAmount): void {
+    this.setOtherAmount(otherAmount);
+    
+    const dialogRef = this.dialog.open(DonateComponent, {
+      width: '900px',
+      height: '900px',
+      data: {donationAmount: this.donationAmount}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 
 }

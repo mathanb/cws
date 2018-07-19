@@ -24,7 +24,16 @@ import { SponsoracommunityComponent } from './donate/sponsoracommunity/sponsorac
 import { FundraiseComponent } from './fundraise/fundraise.component';
 import { LearntofundraiseComponent } from './fundraise/learntofundraise/learntofundraise.component';
 import { EmailComponent } from './fundraise/email/email.component';
-import { EmailService } from './services/emailservice.service';
+import { EmailServiceClient } from './services/emailserviceclient.service';
+import { ProjectsComponent } from './projects/projects.component';
+import { SummercampsComponent } from './projects/summercamps/summercamps.component';
+import { SustainableschoolsprojectComponent } from './projects/sustainableschoolsproject/sustainableschoolsproject.component';
+import { GivecleanwaterComponent } from './projects/givecleanwater/givecleanwater.component';
+import { Project4Component } from './projects/project4/project4.component';
+import { CleanenergyrequirementComponent } from './projects/cleanenergyrequirement/cleanenergyrequirement.component';
+import { Project6Component } from './projects/project6/project6.component';
+import { ContactusComponent } from './contactus/contactus.component';
+
 
 
 const appRoutes: Routes = [
@@ -36,6 +45,13 @@ const appRoutes: Routes = [
   { path: 'app-sac', component: SponsoracommunityComponent },  
   { path: 'app-email', component: EmailComponent },
   { path: 'app-learntofundraise', component: LearntofundraiseComponent },
+  { path: 'app-summercamps', component: SummercampsComponent },
+  { path: 'app-sustainableschoolsproject', component: SustainableschoolsprojectComponent },
+  { path: 'app-givecleanwater', component: GivecleanwaterComponent },
+  { path: 'app-project4', component: Project4Component },
+  { path: 'app-cleanenergyrequirement', component: CleanenergyrequirementComponent },
+  { path: 'app-project6', component: Project6Component },
+  { path: 'app-contactus', component: ContactusComponent },
   { path: '', component: HomepageComponent }
 ];
 
@@ -53,7 +69,16 @@ const appRoutes: Routes = [
     SponsoracommunityComponent,
     FundraiseComponent,
     LearntofundraiseComponent,
-    EmailComponent
+    EmailComponent,
+    ProjectsComponent,
+    SummercampsComponent,
+    SustainableschoolsprojectComponent,
+    GivecleanwaterComponent,
+    Project4Component,
+    CleanenergyrequirementComponent,
+    Project6Component,
+    ContactusComponent,
+ 
   ],
   imports: [
     BrowserModule,
@@ -94,7 +119,7 @@ const appRoutes: Routes = [
     HttpClientModule
   ],
   entryComponents: [DonateComponent],
-  providers: [EmailService],
+  providers: [EmailServiceClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

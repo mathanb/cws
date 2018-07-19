@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 import { AppSettings } from '../config/appsettings';
-import { EmailService } from '../services/emailservice.service';
+import { EmailServiceClient } from '../services/emailserviceclient.service';
 
 @Component({
   selector: 'app-homepage',
@@ -16,7 +16,7 @@ export class HomepageComponent implements OnInit {
   sEmail;
   videoUrl: SafeResourceUrl;
   
-  constructor(private sanitizer: DomSanitizer, private emailService: EmailService) { 
+  constructor(private sanitizer: DomSanitizer, private emailService: EmailServiceClient) { 
     this.videoUrl = sanitizer.bypassSecurityTrustResourceUrl(AppSettings.HOMEPAGE_OUR_STORY_VIDEO);
   }
 

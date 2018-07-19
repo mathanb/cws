@@ -12,51 +12,75 @@
 	<!-- Email Content -->
 	<div class="page-content">
 	
-		<div class="email-container">
-			<br>
+		<div class="row">
+		<div class="col-lg-8 mb-4">
+		
 			<form [formGroup] = "emailForm" (ngSubmit) = "onClickSubmit(emailForm.value)">
 				
-				<mat-form-field class="matformfield-width" > 
-					<input matInput type="string" placeholder="" formControlName = "fullName"> 
-				</mat-form-field> 	
-				<mat-form-field class="matformfield-width"> 
-					<input matInput type="string" placeholder="Full Name" formControlName = "fullName"> 
-				</mat-form-field> 	
-				<br>
+				 <div class="control-group form-group">
+              <div class="controls">
+                <label>Full Name:</label>
+                <input type="text" class="form-control" formControlName= "fullName" required data-validation-required-message="Please enter your name.">
+                <p class="help-block"></p>
+              </div>
+            </div>
 			
-				<mat-form-field class="matformfield-width"> 
-					<input matInput type="date" placeholder="Occassion Date" formControlName = "occassionDate"> 
-				</mat-form-field> 	
-					<br>
+				 <div class="control-group form-group">
+              <div class="controls">
+                <label>Occassion Date:</label>
+                <input type="date" class="form-control" formControlName= "occassionDate" required data-validation-required-message="Please enter the date of your special day.">
+                <p class="help-block"></p>
+              </div>
+            </div>	
 					
-				<mat-form-field class="matformfield-width"> 
-					<input matInput type="email" placeholder="Email" formControlName = "fromEmail"> 
-				</mat-form-field> 	
-					<br>
+					
+				 <div class="control-group form-group">
+              <div class="controls">
+                <label>From Email:</label>
+                <input type="email" class="form-control" formControlName= "fromEmail" required data-validation-required-message="Please enter your email.">
+                <p class="help-block"></p>
+              </div>
+            </div>	
 			
-				<mat-form-field class="matformfield-width"> 
-					<mat-select placeholder="Select Email Template" type="template" formControlName = "emailMessageTemplate" (change)="changeMessageTemplate($event)"> 
-						<mat-option *ngFor="let choice of emailTemplates" [value]="choice">{{choice}}</mat-option>
-					</mat-select>
-				</mat-form-field> 
-					<br>
+			
+			 <div class="control-group form-group">
+              <div class="controls">
+              <label>Select Email Template:</label> 
+						<select class="form-control" 
+						formControlName = "emailMessageTemplate" (change)="changeMessageTemplate($event.target.value)"> 
+						<option *ngFor="let choice of emailTemplates" value="{{choice}}">{{choice}}</option>
+						</select>
+					 <p class="help-block"></p>
+              </div>
+            </div>	
 				
-				<mat-form-field class="matformfield-width"> 	
-					<textarea matInput type="email" placeholder="To" formControlName = "toEmail"></textarea> 
-				</mat-form-field>
-					<br>
+				<div class="control-group form-group">
+              <div class="controls">
+                <label>To Email:</label>
+                <input type="email" class="form-control" formControlName= "toEmail" required data-validation-required-message="Please enter your To email.">
+                <p class="help-block"></p>
+              </div>
+            </div>	
 				
 				
 		
-				<mat-form-field class="matformfield-width"> 
-					<input matInput  placeholder="Subject" formControlName = "emailSubject"> 
-				</mat-form-field> 	
-					<br>
+				<div class="control-group form-group">
+              <div class="controls">
+                <label>Subject:</label>
+                <input type="string" class="form-control" formControlName= "emailSubject" required data-validation-required-message="Please enter your email subject.">
+                <p class="help-block"></p>
+              </div>
+            </div>	
+				
 		
-				<mat-form-field class="matformfield-width"> 
-					<textarea matInput placeholder="Message" formControlName = "emailMessage">	{{emailBodyMsg}}</textarea> 
-				</mat-form-field>
-				<br>
+				<div class="control-group form-group">
+              <div class="controls">
+                <label>Message:</label>
+                <textarea type="string" class="form-control textarea-size" formControlName= "emailMessage" required data-validation-required-message="Please enter your email message."></textarea>
+                <p class="help-block"></p>
+              </div>
+            </div>	
+            
 				<mat-card>
   					<button  type = "submit" mat-raised-button> Send </button>
   					<mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
